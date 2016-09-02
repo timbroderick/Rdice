@@ -1,0 +1,14 @@
+Package: Rdice
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Gennaro Tedesco
+Maintainer: Gennaro Tedesco: <gennarotedesco@gmail.com>
+Description: The description of a package is usually long,
+    spanning multiple lines. The second and subsequent lines
+    should be indented, usually with four spaces.
+Imports:
+    data.table
+License: What license is it under?
+LazyData: TRUE
+RoxygenNote: 5.0.1
