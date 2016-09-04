@@ -1,5 +1,5 @@
 # function to simulate a die roll
-#' @import data.table
+#' @import "data.table"
 
 values.formatting <- function(values, dice){
   if(dice > 1){
@@ -15,9 +15,10 @@ frequency.counts <- function(values){
   freq_table <- as.data.table(table(values))
   freq_table$freq <- freq_table$N/sum(freq_table$N)
   freq_table <- freq_table[N>0]
-  freq_table <- freq_table[, "N" := NULL]
+  #freq_table[, N := NULL]
   return(freq_table)
 }
+
 
 sum.counts <- function(values){
   values$sum <- apply(values, 1, sum)
@@ -25,9 +26,10 @@ sum.counts <- function(values){
   sum_table$freq    <- sum_table$N/sum(sum_table$N)
   setorder(sum_table, sum)
   sum_table$cum_sum <- cumsum(sum_table$freq)
-  sum_table  <- sum_table[, N := NULL]
+  #sum_table[, N:= NULL]
   return(sum_table)
 }
+
 
 #' @export
 dice.roll <- function(faces = 6, dice = 2, rolls = 5, weights){
@@ -72,6 +74,7 @@ dice.roll <- function(faces = 6, dice = 2, rolls = 5, weights){
 }
 
 
+#' @export
 print.diceRoll <- function(x){
   cat("Call:\n")
   print(x$call)
@@ -83,5 +86,4 @@ print.diceRoll <- function(x){
   print(x$sums_freq)
   cat("\n Expectation value:", x$exp_value_sum)
 }
-
 

@@ -1,34 +1,31 @@
-\name{dice_combinations}
-\alias{dice_combinations}
+\name{dice.combinations}
+\alias{dice.combinations}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Dice combinations}
 \description{
 Calculates all possible combinations as result of rolling a set of dice. Similar permutations are identified under the same combination and counted as many times as many occurrencies.
 }
 \usage{
-dice_combinations(faces = ..., dice = ..., rolls = ..., weights = ...)
+dice.combinations(faces, dice, rolls, weights)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
+  \item{faces}{ The number of faces the dice have; if unspecified, it defaults to 6.}
+  \item{dice}{ The number of dice to roll; if unspecified, it defaults to 1.}
+  \item{rolls}{ The number of times to roll the die; if unspeciefid, it defaults to 1.}
+  \item{weights}{ A vector of probability weights to assign to each face of the die; if unspecified, it defaults to a fair die with weights \eqn{1/N}. If specified, its lenght must obviously be equals to the number of faces and all the single weights must sum up to 1.}
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The function returns an object of class \emph{diceRoll}, namely a list whose values are themselves \code{data.table} objects, in turn, so that one can directly apply any \code{data.table} function thereupon.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+  \item{values}{ Bla bla}
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Gennaro Tedesco
 }
 \note{
 %%  ~~further notes~~
