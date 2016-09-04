@@ -6,6 +6,7 @@ my.norm <- function(x){
 }
 
 format.values <- function(values, dice){
+  values <- as.data.table(t((apply(values,1, sort))))
   values$norm <- apply(values, 1, FUN = my.norm)
   values_by_norm <- values[, .N, by = norm]
   setkey(values, norm)
@@ -21,20 +22,36 @@ format.values <- function(values, dice){
 }
 
 
-is.exact <- function(s,t){
-  return(isTRUE(s %in% t))
+is.exact <- function(my_df, dice, u){
+  as.data.table(apply(my_df[, 1:dice, with = FALSE], 1, function(x) all(u%in% x)))
 }
 
 
-is.partial <- function(s,t){
-  return(!isTRUE(!(s %in% t)))
+is.partial <- function(my_df, dice, u){
+  as.data.table(apply(my_df[, 1:dice, with = FALSE], 1, function(x) any(u%in% x)))
 }
-
 
 
 #' @export
-dice.combinations <- function(faces = 6, dice = 2, rolls = 15, weights){
+dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPartial = c(1:6), getExact){
   values <- dice.roll(faces, dice, rolls, weights)$results
   values <- format.values(values, dice)
+  values <- values[values[, .I[is.partial(values, dice, getPartial)==TRUE]]]
+  if(!missing(getExact)){
+    e <-tryCatch(
+      {
+        !(length(getExact)<= faces)
+      },
+      error = function(){
+        return(TRUE)
+      }
+    )
+    if(!e){
+      # case of exact matches with getExact
+      values <- values[values[, .I[is.exact(values, dice, getExact)==TRUE]]]
+    } else {
+      stop("The number of elements in getExact must be at most the number of faces, hence length(getExact) <= faces")
+    }
+  }
   list(values = values)
 }
