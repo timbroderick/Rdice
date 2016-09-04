@@ -8,7 +8,7 @@ Coin flip
 Simulates a coin flip.
 }
 \usage{
-coin.flip(flips = ..., weights = c(0.5, 0.5))
+coin.flip(flips, weights = c(0.5, 0.5))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,5 +37,5 @@ Gennaro Tedesco: \email{gennarotedesco@gmail.com}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-## Examples
-coin.flip(100, weights = c(0.5, 0.5))
+%%
+}

@@ -75,7 +75,7 @@ dice.roll <- function(faces = 6, dice = 2, rolls = 5, weights){
 
 
 #' @export
-print.diceRoll <- function(x){
+print.diceRoll <- function(x, ...){
   cat("Call:\n")
   print(x$call)
   cat("\n Results after", x$rolls, "rolls of", x$dice, "dice:\n")

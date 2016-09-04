@@ -3,7 +3,7 @@
 \title{Dice simulator}
 \description{Simulates rolling of a set of dice.}
 \usage{
-dice.roll(faces = ..., dice = ..., rolls = ..., weights)
+dice.roll(faces, dice, rolls, weights)
 }
 \arguments{
   \item{faces}{ The number of faces the dice have; if unspecified, it defaults to 6.}
@@ -39,8 +39,6 @@ The case face = 2 corresponds to the coin flip.
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-## Examples
-dice.roll(6,3,1000)
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-
+}
