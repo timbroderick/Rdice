@@ -3,10 +3,10 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Dice combinations}
 \description{
-Calculates all possible combinations as result of rolling a set of dice. Similar permutations are identified under the same combination and counted as many times as many occurrencies.
+Calculates all possible combinations as result of rolling a set of dice. Similar permutations are identified under the same combination and counted as many times as many occurrencies. Thee user can choose wheter to match exact values or to perform partial matches.
 }
 \usage{
-dice.combinations(faces, dice, rolls, weights)
+dice.combinations(faces = ..., dice = ..., rolls = ..., weights, getExact = c(...), getPartial = c(...), sum = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -14,12 +14,16 @@ dice.combinations(faces, dice, rolls, weights)
   \item{dice}{ The number of dice to roll; if unspecified, it defaults to 1.}
   \item{rolls}{ The number of times to roll the die; if unspeciefid, it defaults to 1.}
   \item{weights}{ A vector of probability weights to assign to each face of the die; if unspecified, it defaults to a fair die with weights \eqn{1/N}. If specified, its lenght must obviously be equals to the number of faces and all the single weights must sum up to 1.}
+  \item{getExact}{ A vector containing values to be matched \emph{exactly}, namely the function returns only those combinations containing \emph{all} the above mentioned variables.}
+  \item{getPartial}{ A vector containing values to be matched \emph{partially}, namely the function returns only those combinations containing \emph{at least one} of the above mentioned variables. If missing, it defaults to c(1:faces), namemly the function returns all combinations.}
+  \item{sum}{ A logical value, defaulting to FALSE. If TRUE, the function returns the sum of the frequencies of the matches (to be used together with getExact or getPartial)}
 }
+
 \details{
 The function returns an object of class \emph{diceRoll}, namely a list whose values are themselves \code{data.table} objects, in turn, so that one can directly apply any \code{data.table} function thereupon.
 }
 \value{
-  \item{values}{ Bla bla}
+  \item{values}{ If sum = FALSE, a list of all possible combinations rolled, together with corresponding frequencies. If sum = TRUE, the function returns the sum of all frequencies in correspondence of matched valules.}
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -34,19 +38,9 @@ Gennaro Tedesco
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Makes use of \code{\link{dice.roll}}.
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+##---- Examples
 
-## The function is currently defined as
-function (x)
-{
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+dice.combinations(faces = 6, dice = 3, rolls = 1000, weight, getExact = c(1,2), sum = TRUE)

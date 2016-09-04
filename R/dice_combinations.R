@@ -33,25 +33,40 @@ is.partial <- function(my_df, dice, u){
 
 
 #' @export
-dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPartial = c(1:6), getExact){
-  values <- dice.roll(faces, dice, rolls, weights)$results
-  values <- format.values(values, dice)
-  values <- values[values[, .I[is.partial(values, dice, getPartial)==TRUE]]]
-  if(!missing(getExact)){
-    e <-tryCatch(
-      {
-        !(length(getExact)<= faces)
-      },
-      error = function(){
-        return(TRUE)
-      }
-    )
-    if(!e){
-      # case of exact matches with getExact
-      values <- values[values[, .I[is.exact(values, dice, getExact)==TRUE]]]
-    } else {
-      stop("The number of elements in getExact must be at most the number of faces, hence length(getExact) <= faces")
+dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPartial = c(1:faces), getExact, sum = FALSE){
+  e1 <-tryCatch(
+    {
+      !(is.logical(sum))
+    },
+    error = function(){
+      return(TRUE)
     }
+  )
+  if(!e1){
+    values <- dice.roll(faces, dice, rolls, weights)$results
+    values <- format.values(values, dice)
+    values <- values[values[, .I[is.partial(values, dice, getPartial)==TRUE]]]
+    if(!missing(getExact)){
+      e2 <-tryCatch(
+        {
+          !(length(getExact)<= faces)
+        },
+        error = function(){
+          return(TRUE)
+        }
+      )
+      if(!e2){
+        # case of exact matches with getExact
+        values <- values[values[, .I[is.exact(values, dice, getExact)==TRUE]]]
+      } else {
+        stop("The number of elements in getExact must be at most the number of faces, hence length(getExact) <= faces")
+      }
+    }
+    if(isTRUE(sum)){
+      values <- sum(values$freq)
+    }
+    list(values = values)
+  } else {
+    stop("The parameter sum must be set to either TRUE or FALSE")
   }
-  list(values = values)
 }
