@@ -33,10 +33,10 @@ is.partial <- function(my_df, dice, u){
 
 
 #' @export
-dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPartial = c(1:faces), getExact, sum = FALSE){
+dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPartial = c(1:faces), getExact, toSum = FALSE){
   e1 <-tryCatch(
     {
-      !(is.logical(sum))
+      !(is.logical(toSum))
     },
     error = function(){
       return(TRUE)
@@ -62,7 +62,7 @@ dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPart
         stop("The number of elements in getExact must be at most the number of faces, hence length(getExact) <= faces")
       }
     }
-    if(isTRUE(sum)){
+    if(isTRUE(toSum)){
       values <- sum(values$freq)
     }
     list(values = values)
