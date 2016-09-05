@@ -1,5 +1,5 @@
 # function to calculate dice rolls combinations
-#' @import "data.table"
+#' @import data.table
 
 my.norm <- function(x){
   norm(x, type = "2")
@@ -49,7 +49,7 @@ dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPart
     if(!missing(getExact)){
       e2 <-tryCatch(
         {
-          !(length(getExact)<= faces)
+          !(length(getExact)<= dice)
         },
         error = function(){
           return(TRUE)
@@ -59,7 +59,7 @@ dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPart
         # case of exact matches with getExact
         values <- values[values[, .I[is.exact(values, dice, getExact)==TRUE]]]
       } else {
-        stop("The number of elements in getExact must be at most the number of faces, hence length(getExact) <= faces")
+        stop("The number of elements in getExact must be at most the number of dice, hence length(getExact) <= dice")
       }
     }
     if(isTRUE(toSum)){

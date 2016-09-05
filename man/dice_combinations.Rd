@@ -29,10 +29,10 @@ The function returns an object of class \emph{diceRoll}, namely a list whose val
 %% ~put references to the literature/web site here ~
 }
 \author{
-Gennaro Tedesco
+%%
 }
 \note{
-%%  ~~further notes~~
+The case face = 2 corresponds to the \code{\link{coin.flip}}.
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~

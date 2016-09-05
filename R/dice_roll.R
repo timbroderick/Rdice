@@ -1,5 +1,5 @@
 # function to simulate a die roll
-#' @import "data.table"
+#' @import data.table
 
 values.formatting <- function(values, dice){
   if(dice > 1){
