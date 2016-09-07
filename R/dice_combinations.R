@@ -22,8 +22,14 @@ format.values <- function(values, dice){
 }
 
 
+fun.contains <- function(b, s){
+  all(s %in% b) && length(s[duplicated(s)]) <= length(b[duplicated(b)]) &&
+    (if(length(s[duplicated(s)])>0) fun.contains(b[duplicated(b)],s[duplicated(s)]) else 1 )
+}
+
+
 is.exact <- function(my_df, dice, u){
-  as.data.table(apply(my_df[, 1:dice, with = FALSE], 1, function(x) all(u%in% x)))
+  as.data.table(apply(my_df[, 1:dice, with = FALSE], 1, function(x) fun.contains(x,u)))
 }
 
 
