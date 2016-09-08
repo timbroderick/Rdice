@@ -39,7 +39,7 @@ is.partial <- function(my_df, dice, u){
 
 
 #' @export
-dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPartial = c(1:faces), getExact, toSum = FALSE){
+dice.combinations <- function(faces = 6, dice = 2, rolls = 5, weights, getPartial = c(1:faces), getExact, toSum = FALSE){
   e1 <-tryCatch(
     {
       !(is.logical(toSum))
@@ -50,7 +50,7 @@ dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPart
   )
   if(!e1){
     values <- dice.roll(faces, dice, rolls, weights)$results
-    values <- format.values(values, dice)
+    values <- format.values(values, dice) # applies the norm
     values <- values[values[, .I[is.partial(values, dice, getPartial)==TRUE]]]
     if(!missing(getExact)){
       e2 <-tryCatch(
@@ -71,7 +71,7 @@ dice.combinations <- function(faces = 6, dice = 3, rolls = 150, weights, getPart
     if(isTRUE(toSum)){
       values <- sum(values$freq)
     }
-    list(values = values)
+   values
   } else {
     stop("The parameter sum must be set to either TRUE or FALSE")
   }

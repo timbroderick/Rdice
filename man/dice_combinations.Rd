@@ -11,8 +11,8 @@ dice.combinations(faces, dice, rolls, weights, getPartial, getExact, toSum = FAL
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{faces}{ The number of faces the dice have; if unspecified, it defaults to 6.}
-  \item{dice}{ The number of dice to roll; if unspecified, it defaults to 1.}
-  \item{rolls}{ The number of times to roll the die; if unspeciefid, it defaults to 1.}
+  \item{dice}{ The number of dice to roll; if unspecified, it defaults to 2.}
+  \item{rolls}{ The number of times to roll the die; if unspeciefid, it defaults to 5.}
   \item{weights}{ A vector of probability weights to assign to each face of the die; if unspecified, it defaults to a fair die with weights \eqn{1/N}. If specified, its lenght must obviously be equals to the number of faces and all the single weights must sum up to 1.}
   \item{getExact}{ A vector containing values to be matched \emph{exactly}, namely the function returns only those combinations containing \emph{all} the above mentioned variables.}
   \item{getPartial}{ A vector containing values to be matched \emph{partially}, namely the function returns only those combinations containing \emph{at least one} of the above mentioned variables. If missing, it defaults to c(1:faces), namemly the function returns all combinations.}
