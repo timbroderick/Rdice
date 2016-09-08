@@ -42,56 +42,6 @@ coin.flip <- function(coins = 5, flips = 100, weights = c(0.5, 0.5), getExact){
     }
   }
 
-  return_object <- list(results = flips_table
-                        ,coins = coins
-                        ,flips = flips)
-  return_object$call <- match.call()
-  class(return_object) <- "coinFlip"
-  return(return_object)
+  flips_table
 }
-
-
-#' @export
-print.coinFlip <- function(x, ...){
-  cat("Call:\n")
-  print(x$call)
-  cat("\n Results after", x$flips, "flips of", x$coins, "coins:\n")
-  print(x$results)
-}
-
-
-#' @export
-plot.coinFlip <- function(x, colour = c("light", "dark"), ...){
-  x <- x$results
-  if(missing(colour) || colour =="light"){
-    my.background <- '#fdf6e3'
-    my.fill       <- 'burlywood1'
-    my.color      <- 'burlywood3'
-  } else if (colour == "dark"){
-    my.background <- '#002b36'
-    my.fill       <- '#657b83'
-    my.color      <- '#6c71c4'
-  } else {
-    stop("colour must be either 'dark' or 'light'.")
-  }
-    p  <- ggplot(x, aes(y=x$freq, x=factor(c(0:(length(x$freq)-1)))))
-    p <- p + theme(panel.grid.major = element_blank(),
-                   panel.grid.minor = element_blank(),
-                   panel.background = element_rect(fill
-                                                   = my.background),
-                   axis.line = element_line(colour = "black"),
-                   legend.text=element_text(size=16),
-                   legend.title=element_blank(),
-                   axis.title.x = element_text(vjust=0, size=16),
-                   axis.title.y = element_text(vjust=1, size=16),
-                   plot.title   = element_text(vjust=1.5, size=20))
-    p <- p + geom_bar(width=.7, fill= my.fill,
-                      color= my.color, stat = 'identity')
-    p <- p + labs(title = "")
-    p <- p + labs(x = "number of tails")
-    p <- p + labs(y = "frequency")
-    show(p)
-}
-
-
 
