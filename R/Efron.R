@@ -50,12 +50,27 @@ efron.check <- function(dice, faces, prob, error){
 
 
 # generated Efron's dice
-efron.generator <- function(dice, faces, prob, error = 0.001, delay = 300){
+#' @export
+efron.generator <- function(dice, faces, prob, error = 0.001){
   start_time <- proc.time()
   repeat{
     z <- efron.check(dice, faces, prob = prob, error = error)
     delta_time <- proc.time() - start_time
-    if(!is.null(z) || delta_time[3] > delay ) break
+    if(!is.null(z)) break
   }
   return(z)
 }
+
+
+# checks if a set of dice is Efron's
+#' @export
+is.efron <- function(df, prob){
+  truth <- vector(mode="logical", length=0)
+  for(j in 1:(dim(df)[2]-1)){
+    truth <- cbind(truth, is.winner(df[,j], df[,j+1], prob = prob, error = 0.001))
+  }
+  truth <- cbind(truth, is.winner(df[,dim(df)[2]], df[,1], prob = prob, error = 0.001))
+  return(all(truth))
+}
+
+
