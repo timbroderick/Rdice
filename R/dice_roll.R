@@ -15,7 +15,6 @@ frequency.counts <- function(values){
   freq_table <- as.data.table(table(values))
   freq_table$freq <- freq_table$N/sum(freq_table$N)
   freq_table <- freq_table[N>0]
-  #freq_table[, N := NULL]
   return(freq_table)
 }
 
@@ -26,7 +25,6 @@ sum.counts <- function(values){
   sum_table$freq    <- sum_table$N/sum(sum_table$N)
   setorder(sum_table, sum)
   sum_table$cum_sum <- cumsum(sum_table$freq)
-  #sum_table[, N:= NULL]
   return(sum_table)
 }
 
