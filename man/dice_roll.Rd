@@ -16,29 +16,8 @@ The function returns an object of class \emph{diceRoll}, namely a list whose val
 }
 \value{
  \item{results}{ The numerical results rolled.}
- \item{frequencies}{ A table containing each single occurrency (permutation)
-                      of results and the corresponding frequencies.}
- \item{sums_freq}{ A table containing the frequencies of the sums of the
-                  values obtained in each single roll by all the dice.
-                  A cumulative sum is provided too.}
+ \item{frequencies}{ A table containing each single occurrency (permutation) of results and the corresponding frequencies.}
+ \item{sums_freq}{ A table containing the frequencies of the sums of the values obtained in each single roll by all the dice. A cumulative sum is provided too.}
  \item{exp_value_sum}{ The expectation value of the sum of the values obtained.}
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%
-}
-\note{
-%%
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-}

@@ -21,23 +21,6 @@ coin.flip(coins = 5, flips = 100, weights = c(0.5, 0.5), getExact)
 The function is a particular case of \code{\link{dice.roll}}, namely a roll with 2 faces and 1 die.
 }
 \value{
-  \item{}{ A table containing the frequencies for each of the two occurrences (head and tail) after the specified number of flips.}
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%
-}
-\note{
-%%  ~~further notes~~
+{ A table containing the frequencies for each of the two occurrences (head and tail) after the specified number of flips.}
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-%%
-}

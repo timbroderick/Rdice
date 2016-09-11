@@ -25,21 +25,13 @@ The function returns an object of class \emph{diceRoll}, namely a list whose val
 \value{
   \item{values}{ If oSum = FALSE, a list of all possible combinations rolled, together with corresponding frequencies. If toSum = TRUE, the function returns the sum of all frequencies in correspondence of matched valules.}
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%
-}
 \note{
 The case face = 2 corresponds to the \code{\link{coin.flip}}.
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+
 
 \seealso{
 Makes use of \code{\link{dice.roll}}.
 }
-\examples{
-%%
-}
+
