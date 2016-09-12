@@ -23,7 +23,7 @@ dice.combinations(faces, dice, rolls, weights, getPartial, getExact, toSum = FAL
 The function returns an object of class \emph{diceRoll}, namely a list whose values are themselves \code{data.table} objects, in turn, so that one can directly apply any \code{data.table} function thereupon.
 }
 \value{
-  \item{values}{ If oSum = FALSE, a list of all possible combinations rolled, together with corresponding frequencies. If toSum = TRUE, the function returns the sum of all frequencies in correspondence of matched valules.}
+  \item{values}{ If toSum = FALSE, a list of all possible combinations rolled, together with corresponding frequencies. If toSum = TRUE, the function returns the sum of all frequencies in correspondence of matched valules.}
 }
 \note{
 The case face = 2 corresponds to the \code{\link{coin.flip}}.

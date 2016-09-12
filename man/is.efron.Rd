@@ -26,7 +26,7 @@ df <- data.frame(
   die1 = c(5,4,6,15),
   die2 = c(3,6,16,2),
   die3 = c(0,2,14,15),
-  die3 = c(8,10,1,9)
+  die4 = c(8,10,1,9)
 )
 
 is.efron(df, prob = 9/16)
