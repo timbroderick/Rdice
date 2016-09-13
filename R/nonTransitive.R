@@ -29,7 +29,7 @@ is.winner <- function(first, second, prob, error){
 
 
 # checks if one set of randomly generated dice is Efron's
-efron.check <- function(dice, faces, max_value, prob, error){
+nonTransitive.check <- function(dice, faces, max_value, prob, error){
     # check for arguments
     if(missing(prob)){
       if(dice < 2 || faces < dice || dice%%1!=0 || faces%%1!=0){
@@ -79,18 +79,18 @@ efron.check <- function(dice, faces, max_value, prob, error){
 
 # generated Efron's dice
 #' @export
-efron.generator <- function(dice, faces, max_value = faces, prob, error = 0.001){
+nonTransitive.generator <- function(dice, faces, max_value = faces, prob, error = 0.001){
   start_time <- proc.time()
   if(missing(prob)){
     repeat{
-      z <- efron.check(dice, faces, max_value, error = error)
+      z <- nonTransitive.check(dice, faces, max_value, error = error)
       delta_time <- proc.time() - start_time
       if(!is.null(z)) break
     }
     return(z)
   } else {
     repeat{
-      z <- efron.check(dice, faces, max_value, prob = prob, error = error)
+      z <- nonTransitive.check(dice, faces, max_value, prob = prob, error = error)
       delta_time <- proc.time() - start_time
       if(!is.null(z)) break
     }
@@ -101,7 +101,7 @@ efron.generator <- function(dice, faces, max_value = faces, prob, error = 0.001)
 
 # checks if a set of dice is Efron's
 #' @export
-is.efron <- function(df, prob){
+is.nonTransitive <- function(df, prob){
   truth <- vector(mode="logical", length=0)
   for(j in 1:(dim(df)[2]-1)){
     truth <- cbind(truth, is.winner(df[,j], df[,j+1], prob = prob, error = 0.001))

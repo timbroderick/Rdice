@@ -3,10 +3,9 @@ title: "Rdice-vignette"
 author: "Gennaro Tedesco"
 date: "September 12, 2016"
 output: pdf_document
-vignette: >
-  %\VignetteIndexEntry{Rdice vignette}
-  %\VignetteEngine{knitr::rmarkdown}
----
+vignette: |
+  %\VignetteIndexEntry{Rdice vignette}        %\VignetteEngine{knitr::rmarkdown}
+--- 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -126,9 +125,9 @@ Notice that if we had chosen a $p$-value of $0.05$ this would allow us to reject
 
 ## Non-transitive dice
 
-### The function `is.efron`
+### The function `is.nonTransitive`
 
-The function `is.efron` checks whether a given set of dice is non-transitive. The dice must be inputted as a data frame with one column for each die:
+The function `is.nonTransitive` checks whether a given set of dice is non-transitive. The dice must be inputted as a data frame with one column for each die:
 
 ```{r echo=FALSE}
 library(data.table)
@@ -146,7 +145,7 @@ is.winner <- function(first, second, prob, error){
 }
 
 # checks if Efron
-is.efron <- function(df, prob){
+is.nonTransitive <- function(df, prob){
   truth <- vector(mode="logical", length=0)
   for(j in 1:(dim(df)[2]-1)){
     truth <- cbind(truth, is.winner(df[,j], df[,j+1], prob = prob, error = 0.001))
@@ -165,7 +164,7 @@ df <- data.frame(
   die4 = c(8,10,1,9))
 df
 
-is.efron(df, prob = 9/16)
+is.nonTransitive(df, prob = 9/16)
 ```
 where we have specified the non-transitive probability to check against. For general non-transitive dice with different mutual probabilities we can leave the argument `prob` unspecified and let `R` do the verification for us: for example
 
@@ -178,13 +177,13 @@ df <- data.frame(
   die4 = c(1,7,16,8))
 df
 
-is.efron(df)
+is.nonTransitive(df)
 ```
 as different dice have different probabilities to mutually win against each other.
 
-### The function `efron.generator`
+### The function `nonTransitive.generator`
 
-The function `efron.generator` generates a random set of non-transitive dice matching the conditions given as arguments. It internally generates random sets of dice and applies the `is.efron` thereupon until a match is found. If no matches occur, the function times out after a certain amount of time and returns a `NULL` value. Valid arguments are:
+The function `nonTransitive.generator` generates a random set of non-transitive dice matching the conditions given as arguments. It internally generates random sets of dice and applies the `is.nonTransitive` thereupon until a match is found. If no matches occur, the function times out after a certain amount of time and returns a `NULL` value. Valid arguments are:
 
 * dice: The number Z of non-transitive dice to generate
 * faces: The number of faces of each die.
@@ -194,7 +193,7 @@ The function `efron.generator` generates a random set of non-transitive dice mat
 
 ```{r eval=FALSE}
 set.seed(1902)
-efron.generator(faces = 3, dice = 3, max_value = 9, prob = 5/9)
+nonTransitive.generator(faces = 3, dice = 3, max_value = 9, prob = 5/9)
 
    die_1 die_2 die_3
 1:     4     3     8
@@ -204,7 +203,7 @@ efron.generator(faces = 3, dice = 3, max_value = 9, prob = 5/9)
 Had we not specified the probability, an asymettric non-transitive set of dice would have been generated.
 
 ```{r eval=FALSE}
-efron.generator(4,4)
+nonTransitive.generator(4,4)
    die_1 die_2 die_3 die_4
 1:     5     7    12     1
 2:    14    10     9     7

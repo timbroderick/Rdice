@@ -1,5 +1,5 @@
-\name{is.efron}
-\alias{is.efron}
+\name{is.nonTransitive}
+\alias{is.nonTransitive}
 \title{
 Checks truth value of non-transitive sets of dice.
 }
@@ -7,7 +7,7 @@ Checks truth value of non-transitive sets of dice.
 Checks whether a given set of dice is non-transitive with given probability. If no probability is given, checks whether a given set of dice is generally non-transitive.
 }
 \usage{
-is.efron(df, prob)
+is.nonTransitive(df, prob)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -19,7 +19,7 @@ is.efron(df, prob)
 A logical value: TRUE or FALSE.
 }
 \seealso{
-See also \code{\link{efron.generator}}.
+See also \code{\link{nonTransitive.generator}}.
 }
 \examples{
 df <- data.frame(
@@ -29,5 +29,5 @@ df <- data.frame(
   die4 = c(8,10,1,9)
 )
 
-is.efron(df, prob = 9/16)
+is.nonTransitive(df, prob = 9/16)
 }

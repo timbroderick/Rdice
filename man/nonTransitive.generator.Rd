@@ -1,5 +1,5 @@
-\name{efron.generator}
-\alias{efron.generator}
+\name{nonTransitive.generator}
+\alias{nonTransitive.generator}
 \title{
 Non-transitive dice generator.
 }
@@ -7,7 +7,7 @@ Non-transitive dice generator.
 This function generates \eqn{Z} random non-transitive dice given the number faces and the corresponding non-transitive probabilities.
 }
 \usage{
-efron.generator(dice, faces, max_value = faces, prob, error = 0.001)
+nonTransitive.generator(dice, faces, max_value = faces, prob, error = 0.001)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -25,6 +25,6 @@ A \code{data.table} containing the set of non-transitive dice matching the speci
 }
 
 \seealso{
-See also \code{\link{is.efron}}.
+See also \code{\link{is.nonTransitive}}.
 }
 
