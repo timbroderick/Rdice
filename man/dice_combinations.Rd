@@ -28,10 +28,13 @@ The function returns an object of class \emph{diceRoll}, namely a list whose val
 \note{
 The case face = 2 corresponds to the \code{\link{coin.flip}}.
 }
-
-
-
 \seealso{
 Makes use of \code{\link{dice.roll}}.
 }
+\examples{
+dice.combinations(faces = 6, dice = 4, rolls = 100,
+    getExact = c(3,5), getPartial = c(1,2), toSum = TRUE)
+}
+
+
 

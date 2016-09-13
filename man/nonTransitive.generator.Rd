@@ -11,7 +11,7 @@ nonTransitive.generator(dice, faces, max_value = faces, prob, error = 0.001)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{dice}{ The number \eqn{Z} of non-transitive dice to generate}
+  \item{dice}{ The number \eqn{Z} of non-transitive dice to generate.}
   \item{faces}{ The number of faces of each die.}
   \item{max_value}{ The maximum integer allowed as nominal value for the faces. Standard choices are usually \code{max_value = faces} (default) or \code{max_value = faces^2}.}
   \item{prob}{ The probability one wants the set of dice to be non-transitive. If unspecified, a set of dice with different non-transitive probabilities for each pairing will be generated.}
@@ -27,4 +27,6 @@ A \code{data.table} containing the set of non-transitive dice matching the speci
 \seealso{
 See also \code{\link{is.nonTransitive}}.
 }
+
+
 

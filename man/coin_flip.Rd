@@ -23,4 +23,9 @@ The function is a particular case of \code{\link{dice.roll}}, namely a roll with
 \value{
 { A table containing the frequencies for each of the two occurrences (head and tail) after the specified number of flips.}
 }
+\examples{
+coin.flip(coins = 5, flips = 100)
+}
+
+
 

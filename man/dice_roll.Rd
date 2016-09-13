@@ -20,4 +20,10 @@ The function returns an object of class \emph{diceRoll}, namely a list whose val
  \item{sums_freq}{ A table containing the frequencies of the sums of the values obtained in each single roll by all the dice. A cumulative sum is provided too.}
  \item{exp_value_sum}{ The expectation value of the sum of the values obtained.}
 }
+\examples{
+dice.roll(faces = 6, dice = 3, rolls = 5)
+}
+
+
+
 
