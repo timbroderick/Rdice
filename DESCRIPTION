@@ -1,14 +1,14 @@
 Package: Rdice
 Type: Package
-Title: Rdice: a collection of functions to experiment dice rolls
+Title: A collection of functions to experiment dice rolls
 Version: 1.0.0
 Author: Gennaro Tedesco
 Maintainer: Gennaro Tedesco: <gennarotedesco@gmail.com>
-Description: The package provides a collection of functions to simulate
+Description: A collection of functions to simulate
   dice rolls and the like. In particular, experiments and exercises can
   be performed looking at combinations and permutations of values in dice
   rolls and coin flips, together with the corresponding frequencies of
-  occurrencies. When applying each function, the user has to input the
+  occurrences. When applying each function, the user has to input the
   number of times (rolls, flips) to toss the dice. Needless to say, the more
   the tosses, the more the frequencies approximate the actual probabilities.
   Moreover, the package provides functions to generate non-transitive sets
