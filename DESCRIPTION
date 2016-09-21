@@ -11,6 +11,9 @@ Description: The package provides a collection of functions to simulate
   occurrencies. When applying each function, the user has to input the
   number of times (rolls, flips) to toss the dice. Needless to say, the more
   the tosses, the more the frequencies approximate the actual probabilities.
+  Moreover, the package provides functions to generate non-transitive sets
+  of dice (like Efron's) and to check whether a given set of dice is non-transitive
+  with given probability.
 Imports:
     data.table
 Suggests:
