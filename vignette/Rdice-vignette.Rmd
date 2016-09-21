@@ -4,7 +4,7 @@ author: "Gennaro Tedesco"
 date: "September 12, 2016"
 output: pdf_document
 vignette: |
-  %\VignetteIndexEntry{Rdice vignette}           %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Rdice vignette}           %\VignetteEngine{knitr::knitr}
 --- 
 
 ```{r setup, include=FALSE}

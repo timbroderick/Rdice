@@ -1,6 +1,6 @@
 Package: Rdice
 Type: Package
-Title: A collection of functions to experiment dice rolls
+Title: A Collection of Functions to Experiment Dice Rolls
 Version: 1.0.0
 Author: Gennaro Tedesco
 Maintainer: Gennaro Tedesco: <gennarotedesco@gmail.com>
