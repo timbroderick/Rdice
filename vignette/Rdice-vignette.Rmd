@@ -1,12 +1,12 @@
 ---
 title: "Rdice-vignette"
 author: "Gennaro Tedesco"
-date: "September 12, 2016"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Rdice vignette} 
   %\VignetteEngine{knitr::knitr}
-  \usepackage[utf8]{inputenc}
+  %\usepackage[utf8]{inputenc}
 --- 
 
 ```{r setup, include=FALSE}
