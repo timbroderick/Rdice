@@ -4,9 +4,8 @@ author: "Gennaro Tedesco"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Rdice vignette} 
   %\VignetteEngine{knitr::knitr}
-  %\usepackage[utf8]{inputenc}
+  %\VignetteIndexEntry{Rdice vignette} 
 --- 
 
 ```{r setup, include=FALSE}
