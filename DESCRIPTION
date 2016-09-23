@@ -17,7 +17,8 @@ Description: A collection of functions to simulate
 Imports:
     data.table
 Suggests:
-    knitr
+    knitr,
+    rmarkdown
 VignetteBuilder:
     knitr
 License: GPL-2

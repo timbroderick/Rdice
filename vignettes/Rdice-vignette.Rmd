@@ -2,9 +2,9 @@
 title: "Rdice-vignette"
 author: "Gennaro Tedesco"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: rmarkdown::pdf_document
 vignette: >
-  %\VignetteEngine{knitr::knitr}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{Rdice vignette} 
 --- 
 
