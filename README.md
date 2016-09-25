@@ -6,9 +6,11 @@ This repository is home for the package `Rdice`.
 
 ## How to install the package.
 
-In order to install the package make use of `devtools` and run `install_github("gennaro-tedesco/Rdice")`.
+The package is available on CRAN and the current released version is `1.0.0`. 
 
 ## What does the package do?
 
-There is great documentation and vignette provided: check them out!
+The package contains a collection of functions to simulate dice rolls and the like. In particular, experiments and exercises can be performed looking at combinations and permutations of values in dice rolls and coin flips, together with the corresponding frequencies of occurrences. When applying each function, the user has to input the number of times (rolls, flips) to toss the dice. Moreover, the package provides functions to generate non-transitive sets of dice (like Efron's) and to check whether a given set of dice is non-transitive with given probability.
+
+* There is great documentation and vignette provided: check them out!
 
