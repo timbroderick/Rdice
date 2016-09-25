@@ -204,7 +204,7 @@ nonTransitive.generator(faces = 3, dice = 3, max_value = 9, prob = 5/9)
 Had we not specified the probability, an asymettric non-transitive set of dice would have been generated.
 
 ```{r eval=FALSE}
-nonTransitive.generator(4,4)
+nonTransitive.generator(4,4,16)
    die_1 die_2 die_3 die_4
 1:     5     7    12     1
 2:    14    10     9     7
