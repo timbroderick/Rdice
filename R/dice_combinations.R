@@ -71,6 +71,14 @@ dice.combinations <- function(faces = 6, dice = 2, rolls = 5, weights, getPartia
     if(isTRUE(toSum)){
       values <- sum(values$freq)
     }
+   if(dice ==1){
+      values <- data.table(t(values))
+      setnames(values, "value")
+      values      <- values[, .N, by = "value"]
+      values      <- values[, freq:= N/sum(N)]
+      values      <- values[, N:= NULL]
+      values
+   }
    values
   } else {
     stop("The parameter sum must be set to either TRUE or FALSE")
