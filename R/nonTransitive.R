@@ -87,6 +87,7 @@ nonTransitive.generator <- function(dice, faces, max_value = faces, prob, error 
       delta_time <- proc.time() - start_time
       if(!is.null(z)) break
     }
+    z <- data.table(apply(z,2,sort))
     return(z)
   } else {
     repeat{
@@ -94,6 +95,7 @@ nonTransitive.generator <- function(dice, faces, max_value = faces, prob, error 
       delta_time <- proc.time() - start_time
       if(!is.null(z)) break
     }
+    z <- data.table(apply(z,2,sort))
     return(z)
   }
 }
