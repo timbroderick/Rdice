@@ -33,7 +33,7 @@ nonTransitive.check <- function(dice, faces, max_value, prob, error){
     # check for arguments
     if(missing(prob)){
       if(dice < 2 || faces < dice || dice%%1!=0 || faces%%1!=0){
-        stop("Please check the validity of the arguments that you have assigned. Probabilities must be 0 <= P <= 1, dice < 2 and faces < dice must be integers.")
+        stop("Please check the validity of the arguments that you have assigned. Probabilities must be 0 <= P <= 1, dice > 2 and faces > dice must be integers.")
       }
       dice_list <- dice_list.generator(dice, faces, max_value)
 
