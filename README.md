@@ -1,8 +1,4 @@
-[![Build Status](https://travis-ci.org/gennaro-tedesco/Rdice.svg?branch=master)](https://travis-ci.org/gennaro-tedesco/Rdice)
-
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/Rdice)](https://cran.r-project.org/package=Rdice)
-
-[![](http://cranlogs.r-pkg.org/badges/Rdice)](http://cran.rstudio.com/web/packages/Rdice/index.html)
+[![Build Status](https://travis-ci.org/gennaro-tedesco/Rdice.svg?branch=master)](https://travis-ci.org/gennaro-tedesco/Rdice) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/Rdice)](https://cran.r-project.org/package=Rdice) [![](http://cranlogs.r-pkg.org/badges/Rdice)](http://cran.rstudio.com/web/packages/Rdice/index.html)
 
 # Rdice
 
