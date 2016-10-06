@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/gennaro-tedesco/Rdice.svg?branch=master)](https://travis-ci.org/gennaro-tedesco/Rdice)
 
+[![](http://cranlogs.r-pkg.org/badges/Rdice)](http://cran.rstudio.com/web/packages/Rdice/index.html)
+
 # Rdice
 
 This repository is home for the package `Rdice`.
