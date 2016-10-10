@@ -4,7 +4,7 @@ birthday.experiment <- function(days, people, gap){
   values <- sample(1:days, people, replace = TRUE)
   values <- sort(values)
   differences <- append(values[-1],NA)-values
-  return(gap%in%differences)
+  return(any(differences <= gap))
 }
 
 
@@ -22,7 +22,7 @@ k_factorial <- function(n, k){
 # replicates the birthday experiment a certain amount of
 # times and takes the statistics
 #' @export
-birthday.problem <- function(days = 365, people, gap = 0, repetitions){
+birthday.problem <- function(days = 365, people, gap = 0, repetitions = 20000){
   results <- replicate(repetitions, birthday.experiment(days, people, gap))
   if(gap == 0){
     actuals <- 1- k_factorial(days, people)

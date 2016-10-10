@@ -14,7 +14,7 @@ birthday.problem(days, people, gap, repetitions)
   \item{days}{The total number N of possible choices per each occurrency; namely, for K occurrencies the total sample space is \eqn{N^K}. It defaults to the number of days in a regular year, i. e. 365.}
   \item{people}{The number of different cases whose coincidences we want to look at. In the example at hand the number of different people whose birthdays one wants to happen.}
   \item{gap}{The allowed gap between any two different cases. It defaults to 0, namely birthdays happening on the same day.}
-  \item{repetitions}{The number of times one wants to repeat the experiment to derive the statistics.}
+  \item{repetitions}{The number of times one wants to repeat the experiment to derive the statistics. It defaults to 20000, that produces a relative error smaller than 0.5\% in most relevant cases.}
 }
 \details{
 The function also provides the theoretical result, namely the theoretical probability that K cases can occurr simultaneously in the total sample space.
@@ -26,8 +26,8 @@ The function also provides the theoretical result, namely the theoretical probab
 
 \examples{
 ## Simultaneous birthdays
-birthday.problem(people = 23, repetitions = 20000)
+birthday.problem(people = 23)
 ## Birthdays one day apart
-birthday.problem(people = 23, gap = 1, repetitions = 20000)
+birthday.problem(people = 23, gap = 1)
 }
 

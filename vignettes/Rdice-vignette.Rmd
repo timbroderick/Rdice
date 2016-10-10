@@ -245,6 +245,30 @@ data(miwin)
 6:    9    9    8
 ```
 
+## Other combinatorical problems
+
+### The function `birthday problem`
+
+What is the probability that, given a set of $K$ people, two or more happen to be born on the same day? The function accepts the arguments:
+
+* days: the total number N of possible choices per each occurrency; namely, for K occurrencies the total sample space is $N^K$. It defaults to the number of days in a regular year, i. e. $365$.
+* people: the number of different cases whose coincidences we want to look at. In the example at hand the number of different people whose birthdays one wants to happen.
+* gap: The allowed gap between any two different cases. It defaults to 0, namely birthdays happening on the same day.
+* repetitions: the number of times one wants to repeat the experiment to derive the statistics. It defaults to $20000$, that produces a relative error smaller than $0.5\%$ in most relevant cases.
+
+In case of null gap, the function outputs the theoretical expected value of the probability, together with the frequency of successful events from the repetitions. Only the latter is shown, instead, in case of gap $>0$.
+
+```{r}
+## Simultaneous birthdays
+birthday.problem(people = 23)
+
+## Birthdays one day apart
+birthday.problem(people = 23, gap = 1)
+```
+
+
+
+
 
 
 
