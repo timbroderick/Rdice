@@ -2,7 +2,7 @@
 title: "Rdice-vignette"
 author: "Gennaro Tedesco"
 date: "`r Sys.Date()`"
-output: rmarkdown::pdf_document
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{Rdice vignette} 
@@ -10,6 +10,7 @@ vignette: >
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(Rdice)
 ```
 
 ## Introduction
@@ -265,6 +266,7 @@ birthday.problem(people = 23)
 ## Birthdays one day apart
 birthday.problem(people = 23, gap = 1)
 ```
+
 
 
 
