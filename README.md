@@ -16,3 +16,6 @@ Moreover, the package provides functions to generate non-transitive sets of dice
 
 * There is great documentation and vignette provided: check them out!
 
+## Bug report
+
+If you find misbehaviours of errors please do not hesitate to open an issue and report in the corresponding GitHub page - or directly contacting me.
