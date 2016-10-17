@@ -18,4 +18,4 @@ Moreover, the package provides functions to generate non-transitive sets of dice
 
 ## Bug report
 
-If you find misbehaviours of errors please do not hesitate to open an issue and report in the corresponding GitHub page - or directly contacting me.
+If you find misbehaviours or errors please do not hesitate to open an issue and report it the corresponding GitHub page - or to directly contact me. Any feedback is greatly appreciated.
